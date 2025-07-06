@@ -1,8 +1,7 @@
-package med.voll.api.paciente;
+package med.voll.api.domain.paciente;
 
-import med.voll.api.endereco.DadosEndereco;
+import med.voll.api.domain.endereco.DadosEndereco;
 
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
 public record DadosAtualizacaoPaciente(
