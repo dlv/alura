@@ -24,21 +24,29 @@ repositories {
 }
 
 dependencies {
+	// Dependências de Produção
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.flywaydb:flyway-core'
 	implementation 'org.flywaydb:flyway-mysql'
-	implementation 'javax.validation:validation-api:2.0.1.Final'
+	implementation 'javax.validation:validation-api:2.0.1.Final' // Para validação de beans
 	implementation 'org.springframework.boot:spring-boot-starter-security'
-	implementation 'com.auth0:java-jwt:4.5.0'
-	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.9'
+	implementation 'com.auth0:java-jwt:4.5.0' // Para JWT
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.9' // Para OpenAPI/Swagger UI
+
+	// Lombok (para simplificar código)
 	compileOnly 'org.projectlombok:lombok'
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	runtimeOnly 'com.mysql:mysql-connector-j'
 	annotationProcessor 'org.projectlombok:lombok'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	// Ferramentas de Desenvolvimento
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+	// Driver de Banco de Dados
+	runtimeOnly 'com.mysql:mysql-connector-j'
+
+	// Dependências de Teste
+	testImplementation 'org.springframework.boot:spring-boot-starter-test' // Já inclui JUnit 5, Mockito e AssertJ
+	testImplementation 'org.springframework.security:spring-security-test'
 }
 
 tasks.named('test') {
